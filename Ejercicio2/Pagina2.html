@@ -7,13 +7,21 @@
 	<body>
 		<h1>Invertir Texto Escrito</h1>
 		<label for="contenido">Escribe un texto para invertir:</label>
-		<input type="text" id="Contenido">
-		<button onclick="funcion()">Invertir</button>
+		<input type="text" id="contenido">
+		<button onclick="invertir()">Invertir</button>
 		<div id="invertido"></div>
-	</body>
 	
 	<script>
+		function invertir(){
+			const textooriginal=document.getElementById("contenido").value;
+			let nuevotexto="";
+			for (let i=textooriginal.length-1;i>=0;i--){
+				nuevotexto=nuevotexto+textooriginal[i];
+			}
+			document.getElementById("invertido").innerHTML=nuevotexto;
+		}
 	</script>
 
+	</body>
 </html>
 
