@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Numero de dias de la semana</title>
+		<title>Número de días de la semana</title>
 		<script>
-			function numeroDeDia(numDia){
+			function recibirDiaSemana(){
 				const diasSemana={"Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"};
-				const d = new Date();
-				const dia = d.getDay();
-				return diasSemana[dia];
+				return diasSemana[new Date().getDay()};
 			}
 		</script>
-
 	</head>
-
-
-	<body>
+	<body> 
+		<h1>Devuelve el día de la semana</h1>
+		<p>El dia de la semana correspondiente es: <span id="dia"></span></p>
+		<script>
+			document.getElementById("dia").innerHTML=recibirDiaSemana();
+		</script>
 	</body>
 </html>
 
