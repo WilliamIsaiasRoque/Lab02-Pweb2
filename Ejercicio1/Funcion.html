@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Número de días de la semana</title>
-		<script>
-			function recibirDiaSemana(){
-				const diaSemana={"Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"};
-				return diasSemana[new Date().getDay()};
-			}
-		</script>
+		<meta charset="UTF-8">
+		<title>Obtener días de la semana</title>
 	</head>
 	<body> 
 		<h1>Devuelve el día de la semana</h1>
-		<p>El dia de la semana correspondiente es: <span id="dia"></span></p>
+		<label for="numeroDia">Ingrese un número entre 0 y 6:</label>
+		<input type="number" id="numeroDia" min="0" max="6">
+		<button onclick="obtenerDiaSemana()">Mostrar día de la semana</button>
+		<div id="resultado"></div>
 		<script>
-			document.getElementById("dia").innerHTML=recibirDiaSemana();
+			function obtenerDiaSemana(){
+				var numeroDia=parseInt(document.getElementById("numeroDia").value);
+				var diasSemana=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+				var diaSemana=diasSemana[numeroDia];
+				document.getElementById("resultado").textContent="El día correspondiente al número "+numeroDia+" es "+diaSemana+".";
+			}
 		</script>
 	</body>
 </html>
