@@ -1,2 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Obtener código de sesión de Google Meet</title>
+  <style>
+    input[type="text"] {
+      width: 300px; 
+    }
+  </style>
+  <script>
+    function obtenerCodigoSesion() {
+      var url = document.getElementById("url").value;
+      
+      //Si la cantidad de caracteres es distinto de 36 arrojara mensaje de error
+      if (url.length !== 36) {
+        document.getElementById("resultado").textContent = "URL no válida";
+        return;
+      }
+      var codigoSesion = url.replace(/-/g, "");
+      document.getElementById("resultado").textContent = "Código de sesión: " + codigoSesion;
+    }
+  </script>
+</head>
+<body>
+  <h1>Obtener código de sesión de Google Meet</h1>
+  <label for="url">Ingresa la URL de la sesión:</label>
+  <br>
+  <input type="text" id="url">
+  <br>
+  <button onclick="obtenerCodigoSesion()">Obtener código</button>
+  <p id="resultado"></p>
+</body>
+</html>
+
