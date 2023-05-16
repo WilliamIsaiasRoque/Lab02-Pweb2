@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Invertir texto</title>
+	</head>
+	<body>
+		<h1>Invertir Texto Escrito</h1>
+		<label for="contenido">Escribe un texto para invertir:</label>
+		<input type="text" id="contenido">
+		<button onclick="invertir()">Invertir</button>
+		<div id="invertido"></div>
+	
+	<script>
+		function invertir(){
+			const textooriginal=document.getElementById("contenido").value;
+			let nuevotexto="";
+			for (let i=textooriginal.length-1;i>=0;i--){
+				nuevotexto=nuevotexto+textooriginal[i];
+			}
+			document.getElementById("invertido").innerHTML=nuevotexto;
+		}
+	</script>
+	</body>
+</html>
+
