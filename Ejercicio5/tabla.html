@@ -5,13 +5,32 @@
   <title>Calculadora de suma de valores</title>
   <script>
     function generarTabla() {
-      var numValores = document.getElementById("numValores").value;
-      var tabla = document.getElementById("tabla");
-      tabla.innerHTML = "";
+      var numValores = parseInt(document.getElementById("numValores").value);
+      var tablaContainer = document.getElementById("tablaContainer");
+      tablaContainer.innerHTML = "";
+      var tabla = document.createElement("table");
       var suma = 0;
+      for (var i = 0; i < numValores; i++) {
+        var valorAleatorio = Math.floor(Math.random() * 51); // Genera un número aleatorio entre 0 y 50
+        var fila = tabla.insertRow();
+        var celda = fila.insertCell();
+        celda.textContent = valorAleatorio;
+        suma += valorAleatorio;
+      }
+      tablaContainer.appendChild(tabla);
     }
   </script>
 </head>
 <body>
+  <h1>Calculadora de suma de valores</h1>
+  <form onsubmit="event.preventDefault(); generarTabla();">
+    <label for="numValores">Cantidad de valores:</label>
+    <input type="number" id="numValores" min="1" required>
+    <button type="submit">Generar tabla</button>
+  </form>
+  <br>
+  <div id="tablaContainer"></div>
+  <br>
+  <div id="resultado"></div>
 </body>
 </html>
