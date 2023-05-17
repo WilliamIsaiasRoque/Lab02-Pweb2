@@ -11,9 +11,12 @@
   <script>
     function obtenerCodigoSesion() {
       var url = document.getElementById("url").value;
-      
-      //Si la cantidad de caracteres es distinto de 36 arrojara mensaje de error
-      if (url.length !== 36) {
+      //Verificar si la URL tiene el prefijo meet.google.com/
+      if (url.startsWith("meet.google.com/")) {
+        url = url.slice(16);
+      }
+      //Si la cantidad de caracteres es distinto de 12 arrojara mensaje de error
+      if (url.length !== 12) {
         document.getElementById("resultado").textContent = "URL no válida";
         return;
       }
@@ -29,7 +32,7 @@
   <input type="text" id="url">
   <br>
   <button onclick="obtenerCodigoSesion()">Obtener código</button>
+  <br>
   <p id="resultado"></p>
 </body>
 </html>
-
