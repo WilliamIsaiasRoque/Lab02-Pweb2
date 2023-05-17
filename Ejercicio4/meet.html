@@ -11,6 +11,10 @@
   <script>
     function obtenerCodigoSesion() {
       var url = document.getElementById("url").value;
+      //Verificar si la URL tiene el prefijo https://
+      if (url.startsWith("https://")) {
+        url = url.slice(8);
+      }
       //Verificar si la URL tiene el prefijo meet.google.com/
       if (url.startsWith("meet.google.com/")) {
         url = url.slice(16);
