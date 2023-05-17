@@ -18,6 +18,15 @@
         suma += valorAleatorio;
       }
       tablaContainer.appendChild(tabla);
+
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
+      var botonCalcularSuma = document.createElement("button");
+      botonCalcularSuma.textContent = "Calcular suma";
+      botonCalcularSuma.addEventListener("click",function() {
+        resultado.innerHTML = "La suma es: "+suma;
+      });
+      resultado.appendChild(botonCalcularSuma);
     }
   </script>
 </head>
