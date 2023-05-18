@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de suma de valores</title>
+  <script src="Tabla.js"></script>
+</head>
+<body>
+  <h1>Calculadora de suma de valores</h1>
+  <form>
+    <label for="numValores">Cantidad de valores:</label>
+    <input type="number" id="numValores" min="1" required>
+    <button type="button" onclick="generarTabla()">Generar Tabla</button>
+  </form>
+  <br>
+  <div id="tablaContainer"></div>
+  <br>
+  <div id="resultado"></div>
+</body>
+</html>

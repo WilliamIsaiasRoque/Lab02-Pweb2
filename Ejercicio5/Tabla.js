@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Calculadora de suma de valores</title>
-  <script>
-    function generarTabla() {
+function generarTabla() {
       var numValores = parseInt(document.getElementById("numValores").value);
       var tablaContainer = document.getElementById("tablaContainer");
       tablaContainer.innerHTML = "";
@@ -27,19 +21,4 @@
         resultado.innerHTML = "La suma es: "+suma;
       });
       resultado.appendChild(botonCalcularSuma);
-    }
-  </script>
-</head>
-<body>
-  <h1>Calculadora de suma de valores</h1>
-  <form onsubmit="event.preventDefault(); generarTabla();">
-    <label for="numValores">Cantidad de valores:</label>
-    <input type="number" id="numValores" min="1" required>
-    <button type="submit">Generar tabla</button>
-  </form>
-  <br>
-  <div id="tablaContainer"></div>
-  <br>
-  <div id="resultado"></div>
-</body>
-</html>
+}
