@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Cuenta regresiva para el día de Arequipa</title>
-  <script>
-    function calcularDiasFaltantes() {
+function calcularDiasFaltantes() {
       var fechaActual = new Date();
       var fechaArequipa = new Date(fechaActual.getFullYear(), 7, 15); // 7 representa agosto (enero es 0)
       var unDia = 24 * 60 * 60 * 1000; // Cantidad de milisegundos en un dia
       var diasFaltantes = Math.ceil((fechaArequipa - fechaActual) / unDia);
       document.getElementById("resultado").textContent = "Faltan " + diasFaltantes + " días para el día de Arequipa.";
-    }
+}
     window.onload=calcularDiasFaltantes;
-  </script>
-</head>
-<body>
-  <h1>Cuenta regresiva para el día de Arequipa</h1>
-  <p id="resultado"></p>
-</body>
-</html>
